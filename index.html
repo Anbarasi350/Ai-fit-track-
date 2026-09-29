@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI FitTrack</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">FT</div>
+      <div>
+        <h1>AI FitTrack</h1>
+        <p>Smart fitness monitoring assistant</p>
+      </div>
+    </div>
+    <button id="themeBtn" class="icon-btn" aria-label="Toggle theme">☾</button>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="badge">AI-Powered Fitness</span>
+        <h2>Track your progress.<br><span>Improve your health.</span></h2>
+        <p>Enter today's fitness details and get a simple AI-style insight based on your activity.</p>
+      </div>
+      <div class="hero-card">
+        <div class="pulse">♥</div>
+        <strong id="heroScore">0</strong>
+        <span>Today's activity score</span>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card form-card">
+        <div class="card-title">
+          <div><h3>Daily Fitness Input</h3><p>Update your activity for today.</p></div>
+        </div>
+
+        <form id="fitnessForm">
+          <label>Steps <span id="stepsValue">6000</span></label>
+          <input id="steps" type="range" min="0" max="20000" value="6000" step="500">
+
+          <label>Exercise (minutes) <span id="exerciseValue">30</span></label>
+          <input id="exercise" type="range" min="0" max="180" value="30" step="5">
+
+          <label>Sleep (hours) <span id="sleepValue">7</span></label>
+          <input id="sleep" type="range" min="0" max="12" value="7" step="0.5">
+
+          <label>Water (litres) <span id="waterValue">2</span></label>
+          <input id="water" type="range" min="0" max="5" value="2" step="0.1">
+
+          <button class="primary" type="submit">Generate AI Insight</button>
+        </form>
+      </div>
+
+      <div class="card score-card">
+        <h3>Fitness Score</h3>
+        <div class="score-ring"><span id="score">0</span><small>/100</small></div>
+        <p id="scoreText">Add your activity details to calculate your score.</p>
+        <div class="progress"><div id="progressBar"></div></div>
+      </div>
+    </section>
+
+    <section class="card insight-card">
+      <div class="section-heading">
+        <div>
+          <h3>AI Health Insight</h3>
+          <p id="insightStatus">Waiting for today's data...</p>
+        </div>
+        <span class="ai-tag">AI</span>
+      </div>
+      <div id="insight" class="insight-box">
+        <div class="spark">✦</div>
+        <div>
+          <strong>Your personalized recommendation will appear here.</strong>
+          <p>Click “Generate AI Insight” after entering your daily activity.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="mini-card"><span>👟</span><strong id="statSteps">6,000</strong><small>Steps</small></div>
+      <div class="mini-card"><span>🏃</span><strong id="statExercise">30 min</strong><small>Exercise</small></div>
+      <div class="mini-card"><span>😴</span><strong id="statSleep">7 hrs</strong><small>Sleep</small></div>
+      <div class="mini-card"><span>💧</span><strong id="statWater">2.0 L</strong><small>Water</small></div>
+    </section>
+  </main>
+
+  <footer>AI FitTrack • Frontend prototype</footer>
+  <script src="script.js"></script>
+</body>
+</html>
